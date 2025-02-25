@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 from typing import List
-from typing import Optional
 
 
 class ProductPricingCreate(BaseModel):
@@ -10,7 +9,6 @@ class ProductPricingCreate(BaseModel):
 
 
 class ProductAttributeCreate(BaseModel):
-    attribute_value_id: Optional[int] = None
     attribute_id: int
     value: str
 

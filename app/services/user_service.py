@@ -31,7 +31,6 @@ def authenticate_user(db: Session, email: str, password: str):
 def get_current_user(db: Session, token: str):
     payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
     email = payload.get("sub")
-    print(email)
     if email is None:
         raise HTTPException(
             status_code=401, detail="Could not validate credentials")

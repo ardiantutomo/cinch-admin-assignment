@@ -10,7 +10,6 @@ def create_product_pricing(db: Session, product_pricing: ProductPricing):
     db.add(product_pricing)
     db.commit()
     db.refresh(product_pricing)
-    print("asdf")
     return product_pricing
 
 
