@@ -9,9 +9,8 @@ class ProductAttribute(Base):
     __tablename__ = "product_attributes"
 
     id = Column(Integer, primary_key=True, index=True)
-    product_id = Column(Integer, ForeignKey('products.id'), index=True)
-    attribute_value_id = Column(Integer, ForeignKey(
-        'attribute_values.id'), index=True)
+    product_id = Column(Integer)
+    attribute_value_id = Column(Integer)
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.datetime.utcnow,
                         onupdate=datetime.datetime.utcnow)

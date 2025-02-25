@@ -15,6 +15,3 @@ class Attribute(Base):
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.datetime.utcnow,
                         onupdate=datetime.datetime.utcnow)
-
-    attribute_values = relationship(
-        "AttributeValue", back_populates="attribute")

@@ -1,3 +1,5 @@
+from app.models.product_pricing import ProductPricing
+from app.models.product_attributes import ProductAttributes
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
@@ -17,7 +19,3 @@ class Product(Base):
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.datetime.utcnow,
                         onupdate=datetime.datetime.utcnow)
-
-    product_pricings = relationship("ProductPricing", back_populates="product")
-    product_attributes = relationship(
-        "ProductAttributes", back_populates="product")
