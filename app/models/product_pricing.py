@@ -1,6 +1,8 @@
 from sqlalchemy import Column, Integer, Float, DateTime, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 import datetime
+from app.database import Base
 
 Base = declarative_base()
 
@@ -17,3 +19,8 @@ class ProductPricing(Base):
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.datetime.utcnow,
                         onupdate=datetime.datetime.utcnow)
+
+    product = relationship("Product", back_populates="product_pricings")
+    rental_period = relationship(
+        "RentalPeriod", back_populates="product_pricings")
+    region = relationship("Region", back_populates="product_pricings")
