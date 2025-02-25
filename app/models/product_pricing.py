@@ -8,7 +8,7 @@ Base = declarative_base()
 
 
 class ProductPricing(Base):
-    __tablename__ = "product_pricing"
+    __tablename__ = "product_pricings"
 
     id = Column(Integer, primary_key=True, index=True)
     product_id = Column(Integer)
