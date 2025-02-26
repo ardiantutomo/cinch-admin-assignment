@@ -15,4 +15,5 @@ This repo is very simple and only contains the basic features of the product man
 
 1. Clone the repository
 2. Install the dependencies `pip install -r requirements.txt`
-3. Run the project `fastapi run dev`
+3. Create a `.env` file. Can use the `.env.example` as reference.
+4. Run the project `fastapi run dev`

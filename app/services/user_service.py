@@ -15,6 +15,10 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 
 def create_user(db: Session, user: schemas.UserCreate):
+    existing_user = user_repository.get_user_by_email(db, user.email)
+    if existing_user:
+        raise HTTPException(
+            status_code=400, detail="Email already registered")
     hashed_password = pwd_context.hash(user.password)
     db_user = User(name=user.name, email=user.email,
                    password=hashed_password, role="admin")
