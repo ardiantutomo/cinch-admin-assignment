@@ -1,7 +1,9 @@
 # FastAPI Application for Product Management
 
 This FastAPI application is built to simulate the flow of product creation as an internal application for Cinch.
-This repo is very simple and only contains the basic features of the product management. I create it just for showcase my skills and knowledge in FastAPI.
+This repo is very simple and only contains the basic features of the product management. I create it to showcase my skills and knowledge in FastAPI.
+This is a minimalistic implementation of the product creation flow and of course, it can be improved.
+Please check the laravel repo first for setup the database and tables.
 
 ## Features
 
